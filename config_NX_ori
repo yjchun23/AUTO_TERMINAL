@@ -1,0 +1,305 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+  split_horiz = <Alt>h
+  split_vert = <Alt>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[Auto]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = de7f62a3-7be3-4218-8bc3-a226f81c3f94
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 1920, 1052
+      title = hmcl2@hmcl2-MS-7C94: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 524
+      ratio = 0.500477554919
+      type = VPaned
+    [[[child11]]]
+      order = 1
+      parent = child3
+      position = 260
+      ratio = 0.500963391137
+      type = VPaned
+    [[[child12]]]
+      order = 0
+      parent = child11
+      position = 128
+      ratio = 0.501960784314
+      type = VPaned
+    [[[child16]]]
+      order = 1
+      parent = child2
+      position = 478
+      ratio = 0.500523560209
+      type = HPaned
+    [[[child17]]]
+      order = 0
+      parent = child16
+      position = 260
+      ratio = 0.500963391137
+      type = VPaned
+    [[[child18]]]
+      order = 0
+      parent = child17
+      position = 128
+      ratio = 0.501960784314
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 958
+      ratio = 0.500261096606
+      type = HPaned
+    [[[child21]]]
+      order = 1
+      parent = child17
+      position = 129
+      ratio = 0.501945525292
+      type = VPaned
+    [[[child24]]]
+      order = 1
+      parent = child16
+      position = 260
+      ratio = 0.500963391137
+      type = VPaned
+    [[[child25]]]
+      order = 0
+      parent = child24
+      position = 128
+      ratio = 0.501960784314
+      type = VPaned
+    [[[child28]]]
+      order = 1
+      parent = child24
+      position = 129
+      ratio = 0.501945525292
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 477
+      ratio = 0.500524658972
+      type = HPaned
+    [[[child31]]]
+      order = 1
+      parent = child1
+      position = 958
+      ratio = 0.500261096606
+      type = HPaned
+    [[[child32]]]
+      order = 0
+      parent = child31
+      position = 477
+      ratio = 0.500524658972
+      type = HPaned
+    [[[child34]]]
+      order = 1
+      parent = child32
+      position = 261
+      ratio = 0.500959692898
+      type = VPaned
+    [[[child37]]]
+      order = 1
+      parent = child31
+      position = 478
+      ratio = 0.500523560209
+      type = HPaned
+    [[[child4]]]
+      order = 0roscore
+      parent = child3
+      position = 260
+      ratio = 0.500963391137
+      type = VPaned
+    [[[child5]]]
+      order = 0
+      parent = child4
+      position = 128
+      ratio = 0.501960784314
+      type = VPaned
+    [[[child8]]]
+      order = 1
+      parent = child4
+      position = 129
+      ratio = 0.501945525292
+      type = VPaned
+    [[[terminal10]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/catkin_ws_matlab/devel/setup.bash && rosrun lidar_cv lidar_cv_node"; bash
+      order = 1
+      parent = child8
+      profile = default
+      title = LASER_CUT
+      type = Terminal
+      uuid = b8ebaf89-42d5-433e-bdb4-f4adedff8332
+    [[[terminal13]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_avoidance/devel/setup.bash && roslaunch local_avoidance local_avoidance.launch"; bash
+      order = 0
+      parent = child12
+      profile = default
+      title = LOCAL_AVOIDANCE
+      type = Terminal
+      uuid = 0b76bf95-81da-43e4-82f9-bc2eb4ff3f3e
+    [[[terminal14]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source 2023_competition/catkin_ws_ledderpass/devel/setup.bash && rosrun ledder_pass_module_test_v10_21a_fsmint ledder_pass_module_test_v10_21a_fsmint"; bash
+      order = 1
+      parent = child12
+      profile = default
+      title = LEDDER_PASS
+      type = Terminal
+      uuid = 4e00fabb-00d0-4781-b127-8a0d67d328ac
+    [[[terminal15]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_FSM/devel/setup.bash && rosrun fsm_2023_comp_v3_manual_21a fsm_2023_comp_v3_manual_21a"; bash
+      order = 1
+      parent = child11
+      profile = default
+      title = FSM_MANUAL
+      type = Terminal
+      uuid = bc4356a0-0666-49d5-a4e1-c2e0dd360068
+    [[[terminal19]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_veranda_FSM/devel/setup.bash && rosrun veranda_fsm_2023_v5_230501 veranda_FSM_2023_v5_230501"; bash
+      order = 0
+      parent = child18
+      profile = default
+      title = VERANDA
+      type = Terminal
+      uuid = cac79437-8328-4c71-ab0c-0f59fba6a503
+    [[[terminal20]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_obstacle/devel/setup.bash && roslaunch obstacle_detector single_scanner.launch"; bash
+      order = 1
+      parent = child18
+      profile = default
+      title = OBSTACLE
+      type = Terminal
+      uuid = 5a59d50b-3af7-44b5-911f-9ebc74d1a9fb
+    [[[terminal22]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_aruco/devel/setup.bash && roslaunch aruco_detect aruco_detect.launch"; bash
+      order = 0
+      parent = child21
+      profile = default
+      title = ARUCO
+      type = Terminal
+      uuid = b3f67cd0-ae2b-44c0-814d-8f5c738c8d5f
+    [[[terminal23]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_aruco_marker_localizer/devel/setup.bash && rosrun localizer_2023_comp_v1 localizer_2023_comp_v1"; bash
+      order = 1
+      parent = child21
+      profile = default
+      title = LANDING_LOCALIZER
+      type = Terminal
+      uuid = bcedc8c6-eb9c-49fb-8e69-6a086874185b
+    [[[terminal26]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_aruco_marker_localizer/devel/setup.bash && rosrun landing_control_2023_comp_v3 landing_control_2023_comp_v3"; bash
+      order = 0
+      parent = child25
+      profile = default
+      title = LANDING_CONTROLLER
+      type = Terminal
+      uuid = f0d07e4b-8e36-4918-8a7a-1a0bde0d483e
+    [[[terminal27]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_realsense2/devel/setup.bash && roslaunch realsense2_camera rs_camera.launch camera:=down_camera serial_no:=108322073487"; bash
+      order = 1
+      parent = child25
+      profile = default
+      title = DOWN_CAMERA
+      type = Terminal
+      uuid = 97ee5be8-7b81-416b-9712-8ffb97b8d271
+    [[[terminal29]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && cd ~/Downloads"; bash
+      order = 0
+      parent = child28
+      profile = default
+      title = cd ~/Downloads
+      type = Terminal
+      uuid = 5083602b-c468-4eb5-9adb-40ba4b642ff6
+    [[[terminal30]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67; bash
+      order = 1
+      parent = child28
+      profile = default
+      title = NONE
+      type = Terminal
+      uuid = ce14ba93-7484-4291-a480-cafa22478722
+    [[[terminal33]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && rostopic echo /mavros/local_position/pose -c"; bash
+      order = 0
+      parent = child32
+      profile = default
+      title = LOCAL
+      type = Terminal
+      uuid = f64af614-f6a5-49cd-af2e-231c1bbebb75
+    [[[terminal35]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && rostopic echo /mavros/distance_sensor/lidarlite_pub/range -c"; bash
+      order = 0
+      parent = child34
+      profile = default
+      title = 1D
+      type = Terminal
+      uuid = 1200f246-c920-4b30-9169-254395837fb0
+    [[[terminal36]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && rostopic echo /mavros/gpsstatus/gps1/raw/fix_type -c"; bash
+      order = 1
+      parent = child34
+      profile = default
+      title = GPSSTATUS
+      type = Terminal
+      uuid = ee6fad05-6f79-4476-904e-92c13888873a
+    [[[terminal38]]]
+      command=ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && rostopic echo /PBVS_estimation -c"; bash
+      order = 0
+      parent = child37
+      profile = default
+      title = PBVS
+      type = Terminal
+      uuid = 4fb6d8aa-b200-452e-97f5-75ccdbefe95a
+    [[[terminal39]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && rostopic echo /mavros/setpoint_raw/target_local -c"; bash
+      order = 1
+      parent = child37
+      profile = default
+      title = TARGET_LOCAL
+      type = Terminal
+      uuid = c6ec5240-f20c-4183-ae04-d20c45084629
+    [[[terminal6]]]
+      command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && roscore"; bash
+      order = 0
+      parent = child5
+      profile = default
+      title = ROSCORE
+      type = Terminal
+      uuid = de7f62a3-7be3-4218-8bc3-a226f81c3f94
+    [[[terminal7]]]
+command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && sudo chmod 666 /dev/ttyTHS0 && source ~/catkin_ws/devel/setup.bash && roslaunch mavros px4.launch"; bash
+      order = 1
+      parent = child5
+      profile = default
+      title = CHMOD/MAVROS
+      type = Terminal
+      uuid = 4610e78b-eb4a-47f0-8359-7ef8b2e72e04
+    [[[terminal9]]]
+command=sshpass -p hmc2020 ssh slam01@223.171.137.67 "sleep 10s && source /opt/ros/melodic/setup.bash && source ~/2023_competition/catkin_ws_urg/devel/setup.bash && cd ~/2023_competition/catkin_ws_urg/src/urg_node/launch && roslaunch urg_lidar.launch"; bash
+      order = 0
+      parent = child8
+      profile = default
+      title = LASER
+      type = Terminal
+      uuid = a6745f88-484b-4f7c-ae3e-cb4294201ce6
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+  [[katech]]
+    cursor_color = "#aaaaaa"
