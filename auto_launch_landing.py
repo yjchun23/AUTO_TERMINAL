@@ -17,7 +17,7 @@ def find_terminator_shortcut():
     home_dir = os.path.expanduser("~")
     file_path = home_dir + '/.config/terminator/config'
     cmd_split_vert = 'Control_R+Shift_R+e'
-    cmd_split_horiz = 'Control_R+Shift_R+cmd'
+    cmd_split_horiz = 'Control_R+Shift_R+o'
     cmd_go_right = 'Alt+Right'
     cmd_go_left = 'Alt+Left'
     cmd_go_up  = 'Alt+Up'
