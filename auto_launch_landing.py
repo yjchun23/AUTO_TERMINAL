@@ -3,7 +3,7 @@ import time
 import os
 import re
 
-server_name = 'ros2nx'
+server_name = 'hmcl'
 server_ip = '223.171.137.67'
 server_passward = 'hmc2020'
 current_focus_row = -1
@@ -18,7 +18,7 @@ def find_terminator_shortcut():
     file_path = home_dir + '/.config/terminator/config'
     cmd_split_vert = 'Control_R+Shift_R+e'
     cmd_split_horiz = 'Control_R+Shift_R+cmd'
-    o_go_right = 'Alt+Right'
+    cmd_go_right = 'Alt+Right'
     cmd_go_left = 'Alt+Left'
     cmd_go_up  = 'Alt+Up'
     cmd_go_down = 'Alt+Down'
