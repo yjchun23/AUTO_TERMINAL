@@ -224,6 +224,7 @@ def main():
     time.sleep(1)
     type_cmd("MAVROS")
     move_focus("next")
+    time.sleep(5)
 
     # 13
     name_terminal("DOWN_CAMERA")
