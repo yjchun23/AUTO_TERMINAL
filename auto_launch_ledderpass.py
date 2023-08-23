@@ -196,6 +196,7 @@ def enter_ssh():
     global server_name, server_ip, server_passward
     subprocess.run(['xdotool', 'key', 'Alt+a'])
     cmd = 'ssh '+ server_name + '@'+ server_ip
+    type_cmd("cd")
     type_cmd(cmd)
     time.sleep(5)
     type_cmd(cmd)
@@ -213,8 +214,6 @@ def name_terminal(name):
 def full_screen():
     subprocess.run(['xdotool', 'key', 'Super+Up'])
     time.sleep(1)
-
-
 
 
 def main():
