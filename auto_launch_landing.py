@@ -25,7 +25,9 @@ def find_terminator_shortcut():
 
     patterns = {
     "<Shift>": "Shift_R+",
-    "<Primary>": "Control_R+"
+    "<Primary>": "Control_R+",
+    "<Super>": "Super+"
+
     }
 
     with open(file_path,'r') as f:
@@ -165,29 +167,39 @@ def split_terminator_init():
     move_focus("Left")
     
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
+
 
 def enter_ssh():
     global server_name, server_ip, server_passward
     subprocess.run(['xdotool', 'key', 'Alt+a'])
     cmd = 'ssh '+ server_name + '@'+ server_ip
+    type_cmd("cd")
     type_cmd(cmd)
     time.sleep(5)
     type_cmd(cmd)
@@ -202,11 +214,17 @@ def name_terminal(name):
     time.sleep(sleep_time)
     type_cmd(name)
 
+def full_screen():
+    subprocess.run(['xdotool', 'key', 'Super+Up'])
+    time.sleep(1)
+
 
 def main():
     subprocess.Popen(['terminator']) # Open terminator
     find_terminator_shortcut() # find shortcut from config file
     time.sleep(2) # Wait for the terminals to open
+    full_screen()
+
 
     split_terminator_init() # predefined 4*4 layout
     move_focus("init") # move focus to left top
@@ -255,7 +273,7 @@ def main():
 
     # 24
     name_terminal("rosparam load")
-    type_cmd("cd Download")
+    type_cmd("cd ~/Download")
     time.sleep(1)
     type_cmd("rosparam load 2023_competition_0328.yaml")
     move_focus("next")   
@@ -272,7 +290,7 @@ def main():
 
     # 33
     name_terminal("param set")
-    type_cmd("cd Download")
+    type_cmd("cd ~/Download")
     time.sleep(1)
     type_cmd("rosparam set /FSM_STAGE 90.0")
     move_focus("next")
@@ -293,8 +311,8 @@ def main():
     move_focus("next")
 
     # 43
-    name_terminal(" ")
-    type_cmd(" ")
+    name_terminal("throttle")
+    type_cmd("rosrun topic_tools throttle messsages /hmcl/task/setpoint_raw/local 50.0 /mavros/setpoint_raw/local")
     move_focus("next")
 
     # 44
