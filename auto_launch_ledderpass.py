@@ -1,7 +1,6 @@
 import subprocess
 import time
 import os
-import re
 
 server_name = 'ros2nx'
 server_ip = '223.171.137.67'
@@ -10,7 +9,7 @@ current_focus_row = -1
 current_focus_col = -1
 max_row = 4
 max_col = 4
-sleep_time =0.1
+sleep_time = 0.3
 
 def find_terminator_shortcut():
     global cmd_split_vert,cmd_split_horiz,cmd_go_left,cmd_go_right, cmd_go_down,cmd_go_up
@@ -18,14 +17,15 @@ def find_terminator_shortcut():
     file_path = home_dir + '/.config/terminator/config'
     cmd_split_vert = 'Control_R+Shift_R+e'
     cmd_split_horiz = 'Control_R+Shift_R+cmd'
-    o_go_right = 'Alt+Right'
+    cmd_go_right = 'Alt+Right'
     cmd_go_left = 'Alt+Left'
     cmd_go_up  = 'Alt+Up'
     cmd_go_down = 'Alt+Down'
 
     patterns = {
     "<Shift>": "Shift_R+",
-    "<Primary>": "Control_R+"
+    "<Primary>": "Control_R+",
+    "<Super>": "Super+"
     }
 
     with open(file_path,'r') as f:
@@ -165,21 +165,29 @@ def split_terminator_init():
     move_focus("Left")
     
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
 
     split_h()
+    split_h()
+    move_focus("Up")
     move_focus("Up")
     split_h()
     move_focus("Right")
@@ -202,11 +210,18 @@ def name_terminal(name):
     time.sleep(sleep_time)
     type_cmd(name)
 
+def full_screen():
+    subprocess.run(['xdotool', 'key', 'Super+Up'])
+    time.sleep(1)
+
+
+
 
 def main():
     subprocess.Popen(['terminator']) # Open terminator
     find_terminator_shortcut() # find shortcut from config file
     time.sleep(2) # Wait for the terminals to open
+    full_screen()
 
     split_terminator_init() # predefined 4*4 layout
     move_focus("init") # move focus to left top
@@ -249,7 +264,7 @@ def main():
 
     # 23
     name_terminal("AVOID_param")
-    type_cmd("cd Download")
+    type_cmd("cd ~/Download")
     type_cmd("rosparam set /FSM/STAGE_avoidance ")
     move_focus("next")   
 
